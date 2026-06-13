@@ -37,7 +37,7 @@ npm run build
 
 ## Configuration
 
-Set `NEXT_PUBLIC_SITE_URL` to the verified production site origin before deployment. It is used for metadata, canonical URLs, `robots.txt`, and `sitemap.xml`.
+The verified production URL is `https://alfon-portfolio.vercel.app`. Set `NEXT_PUBLIC_SITE_URL` only when overriding that URL, such as after connecting a custom domain. The site URL is used for metadata, canonical URLs, `robots.txt`, and `sitemap.xml`.
 
 Email and resume actions are centralized in `src/data/site.ts`. The resume PDF path is configured, but the public PDF should only be added after confirming it is safe for public distribution.
 

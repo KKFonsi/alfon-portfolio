@@ -19,7 +19,9 @@ function normalizeSiteUrl(url: string | undefined) {
     return null;
   }
 
-  return url.replace(/\/+$/, "");
+  const urlWithProtocol = /^https?:\/\//.test(url) ? url : `https://${url}`;
+
+  return urlWithProtocol.replace(/\/+$/, "");
 }
 
 export const siteConfig: SiteConfig = {
@@ -30,7 +32,9 @@ export const siteConfig: SiteConfig = {
     "Portfolio of Kevin Kyle S. Alfon, an Information Technology student building web, Android, desktop, and academic software projects.",
   bio: "Information Technology student building practical web, Android, desktop, and academic software projects. Interested in full-stack development, software architecture, and practical problem solving.",
   githubUrl: "https://github.com/KKFonsi",
-  siteUrl: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
+  siteUrl:
+    normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
+    "https://alfon-portfolio.vercel.app",
   contact: {
     email: null,
     githubUrl: "https://github.com/KKFonsi",
