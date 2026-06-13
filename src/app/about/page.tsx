@@ -1,0 +1,214 @@
+import type { Metadata } from "next";
+
+import { PageContainer } from "@/components/layout/PageContainer";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { Section } from "@/components/ui/Section";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { skillGroups } from "@/data/skills";
+import { getCanonicalUrl } from "@/lib/site-url";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about Kevin Kyle S. Alfon, an Information Technology student at the Polytechnic University of the Philippines preparing for internship and OJT opportunities.",
+  ...(getCanonicalUrl("/about")
+    ? {
+        alternates: {
+          canonical: getCanonicalUrl("/about"),
+        },
+      }
+    : {}),
+};
+
+const overviewCards = [
+  {
+    title: "Current Focus",
+    description:
+      "Preparing for internship and on-the-job training opportunities while continuing to build academic software projects.",
+  },
+  {
+    title: "Project Range",
+    description:
+      "Works across web, Android, desktop, and console-based projects, with attention to frontend interfaces, backend APIs, databases, and UI design.",
+  },
+  {
+    title: "Direction",
+    description:
+      "Interested in improving full-stack development, software architecture, and practical problem-solving skills.",
+  },
+];
+
+const approachItems = [
+  "Break projects into manageable phases so each part can be planned, built, and reviewed clearly.",
+  "Keep data, application logic, and business rules organized so systems stay easier to understand.",
+  "Build reusable components where they reduce duplication and make interfaces more consistent.",
+  "Test features after each phase and preserve working behavior when adding or changing functionality.",
+  "Improve interfaces based on user needs, readability, and practical workflows.",
+];
+
+const learningGoals = [
+  "Strengthening TypeScript and React architecture",
+  "Improving Android application architecture",
+  "Building more reliable backend APIs",
+  "Improving database design",
+  "Writing maintainable and understandable code",
+  "Developing stronger testing and deployment practices",
+];
+
+export default function AboutPage() {
+  return (
+    <>
+      <section className="border-b border-border bg-background py-16 sm:py-20 lg:py-24">
+        <PageContainer>
+          <div className="max-w-4xl">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              About
+            </p>
+            <h1 className="mt-4 text-5xl font-semibold leading-tight text-foreground sm:text-6xl">
+              Kevin Kyle S. Alfon
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-foreground-muted sm:text-xl">
+              Information Technology student at the Polytechnic University of
+              the Philippines, building practical web, Android, desktop, and
+              console-based academic projects while preparing for internship and
+              OJT opportunities.
+            </p>
+          </div>
+        </PageContainer>
+      </section>
+
+      <Section className="border-b border-border bg-surface/35">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <SectionHeading
+            eyebrow="Overview"
+            title="A practical software development foundation"
+            description="My current work is centered on learning by building complete, understandable systems for academic and personal projects."
+          />
+          <div>
+            <p className="text-base leading-8 text-foreground-muted sm:text-lg">
+              I have experience working with frontend development, Android
+              applications, backend APIs, databases, and UI design. I focus on
+              making project ideas usable by planning the interface, organizing
+              the data flow, building the core behavior, and checking that each
+              phase still works as intended.
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              {overviewCards.map((card) => (
+                <article
+                  key={card.title}
+                  className="rounded-lg border border-border bg-background p-5"
+                >
+                  <Badge variant="accent">{card.title}</Badge>
+                  <p className="mt-4 text-sm leading-6 text-foreground-muted">
+                    {card.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHeading
+          eyebrow="Skills"
+          title="Technical Skills"
+          description="Technologies and tools represented by my current portfolio projects and development practice."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {skillGroups.map((group) => (
+            <article
+              key={group.title}
+              className="rounded-lg border border-border bg-surface p-5"
+            >
+              <h3 className="text-lg font-semibold text-foreground">
+                {group.title}
+              </h3>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <Badge key={skill}>{skill}</Badge>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="border-y border-border bg-surface/35">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <SectionHeading
+            eyebrow="Approach"
+            title="How I approach projects"
+            description="I try to keep each project structured enough to maintain while still moving in clear, achievable phases."
+          />
+          <div className="grid gap-3">
+            {approachItems.map((item) => (
+              <div
+                key={item}
+                className="rounded-lg border border-border bg-background p-5"
+              >
+                <p className="text-sm leading-6 text-foreground-muted">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <article className="rounded-lg border border-border bg-surface p-6 sm:p-8">
+            <SectionHeading
+              eyebrow="Education"
+              title="Current Status"
+              description="Polytechnic University of the Philippines"
+              className="max-w-none"
+            />
+            <div className="mt-6 flex flex-wrap gap-2">
+              <Badge variant="status">Information Technology</Badge>
+              <Badge variant="accent">
+                Preparing for internship / OJT opportunities
+              </Badge>
+            </div>
+          </article>
+
+          <article className="rounded-lg border border-border bg-surface p-6 sm:p-8">
+            <SectionHeading
+              eyebrow="Learning"
+              title="Current Learning Goals"
+              description="Areas I am actively strengthening as I prepare for real team workflows."
+              className="max-w-none"
+            />
+            <ul className="mt-6 grid gap-3">
+              {learningGoals.map((goal) => (
+                <li key={goal} className="flex gap-3 text-sm text-foreground-muted">
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                  />
+                  <span>{goal}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </Section>
+
+      <Section className="border-t border-border bg-surface/35">
+        <div className="rounded-lg border border-border bg-background p-6 sm:p-8 lg:p-10">
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+            <SectionHeading
+              eyebrow="Contact"
+              title="Open to internship and OJT conversations"
+              description="For current contact options and portfolio links, visit the contact section on the homepage."
+              className="max-w-2xl"
+            />
+            <Button href="/#contact">Go to Contact</Button>
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}
