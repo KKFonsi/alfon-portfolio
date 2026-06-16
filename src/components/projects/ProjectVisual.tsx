@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 import type { Project } from "@/types";
 
@@ -28,6 +30,31 @@ function getVisualMode(category: string) {
 
 export function ProjectVisual({ project, className }: ProjectVisualProps) {
   const mode = getVisualMode(project.category);
+  const coverImage = project.coverImage;
+
+  if (coverImage?.src && coverImage.width && coverImage.height) {
+    return (
+      <div
+        className={cn(
+          "relative aspect-[16/9] overflow-hidden rounded-md border border-border bg-background",
+          className,
+        )}
+      >
+        <Image
+          src={coverImage.src}
+          alt={coverImage.alt}
+          width={coverImage.width}
+          height={coverImage.height}
+          className="h-full w-full object-contain"
+          sizes="(min-width: 1024px) 42vw, (min-width: 768px) 50vw, 100vw"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+        <div className="absolute bottom-4 left-4 rounded-sm border border-white/20 bg-black/45 px-3 py-2 text-sm font-semibold text-white backdrop-blur">
+          {coverImage.placeholderLabel}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div

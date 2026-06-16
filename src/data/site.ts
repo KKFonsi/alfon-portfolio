@@ -9,6 +9,7 @@ type SiteConfig = {
   contact: {
     email: string | null;
     githubUrl: string;
+    linkedInUrl: string;
     resumePath: string;
     resumeAvailable: boolean;
   };
@@ -29,16 +30,17 @@ export const siteConfig: SiteConfig = {
   shortName: "Kevin Alfon",
   title: "Kevin Kyle S. Alfon | Information Technology Student and Developer",
   description:
-    "Portfolio of Kevin Kyle S. Alfon, an Information Technology student building web, Android, desktop, and academic software projects.",
-  bio: "Information Technology student building practical web, Android, desktop, and academic software projects. Interested in full-stack development, software architecture, and practical problem solving.",
+    "Portfolio of Kevin Kyle S. Alfon, an Information Technology student and AI-assisted developer building web, Android, desktop, and academic software projects.",
+  bio: "Information Technology student and AI-assisted developer building practical web, Android, desktop, and academic software projects with a transparent vibe-coding workflow.",
   githubUrl: "https://github.com/KKFonsi",
   siteUrl:
     normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
     "https://alfon-portfolio.vercel.app",
   contact: {
-    email: null,
+    email: "alfonkevinkylesoriano@gmail.com",
     githubUrl: "https://github.com/KKFonsi",
-    resumePath: "/resume/Kevin-Kyle-Alfon-Resume.pdf",
-    resumeAvailable: false,
+    linkedInUrl: "https://www.linkedin.com/in/alfon-kevin-kyle-794634411/",
+    resumePath: "/resume/RESUME.docx",
+    resumeAvailable: true,
   },
 };

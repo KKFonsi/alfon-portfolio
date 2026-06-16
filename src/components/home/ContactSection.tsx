@@ -18,9 +18,9 @@ export function ContactSection() {
         </div>
         <div className="mt-8 grid gap-5 border-t border-border pt-6">
           <p className="max-w-3xl text-sm leading-6 text-foreground-muted">
-            Public contact details are limited to portfolio-safe links. Email
-            and resume actions will be enabled once the approved public details
-            and PDF are supplied.
+            Public contact details are limited to portfolio-safe links. Email,
+            GitHub, LinkedIn, and resume actions are available for internship
+            and OJT conversations.
           </p>
           <div className="flex flex-wrap gap-2">
             <Badge variant="status">Philippines</Badge>

@@ -30,6 +30,24 @@ export function Footer() {
           >
             GitHub
           </a>
+          <a
+            href={siteConfig.contact.linkedInUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit rounded-sm font-medium text-foreground-muted transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+          >
+            LinkedIn
+          </a>
+          {siteConfig.contact.resumeAvailable ? (
+            <a
+              href={siteConfig.contact.resumePath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit rounded-sm font-medium text-foreground-muted transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              Resume
+            </a>
+          ) : null}
         </div>
       </PageContainer>
     </footer>

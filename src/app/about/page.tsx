@@ -5,13 +5,14 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { certificates } from "@/data/certificates";
 import { skillGroups } from "@/data/skills";
 import { getCanonicalUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Kevin Kyle S. Alfon, an Information Technology student at the Polytechnic University of the Philippines preparing for internship and OJT opportunities.",
+    "Learn about Kevin Kyle S. Alfon, an Information Technology student and AI-assisted developer preparing for internship and OJT opportunities.",
   ...(getCanonicalUrl("/about")
     ? {
         alternates: {
@@ -25,26 +26,26 @@ const overviewCards = [
   {
     title: "Current Focus",
     description:
-      "Preparing for internship and on-the-job training opportunities while continuing to build academic software projects.",
+      "Preparing for internship and on-the-job training opportunities while continuing to build academic and personal software projects.",
   },
   {
     title: "Project Range",
     description:
-      "Works across web, Android, desktop, and console-based projects, with attention to frontend interfaces, backend APIs, databases, and UI design.",
+      "Works across web, Android, desktop, and other software projects, with attention to interfaces, backend behavior, data, and UI design.",
   },
   {
-    title: "Direction",
+    title: "AI-Assisted Direction",
     description:
-      "Interested in improving full-stack development, software architecture, and practical problem-solving skills.",
+      "Uses agentic tools while still planning requirements, testing behavior, debugging issues, and reviewing generated implementation.",
   },
 ];
 
 const approachItems = [
-  "Break projects into manageable phases so each part can be planned, built, and reviewed clearly.",
-  "Keep data, application logic, and business rules organized so systems stay easier to understand.",
-  "Build reusable components where they reduce duplication and make interfaces more consistent.",
-  "Test features after each phase and preserve working behavior when adding or changing functionality.",
-  "Improve interfaces based on user needs, readability, and practical workflows.",
+  "Define the project goal, requirements, user roles, and expected behavior before implementation work starts.",
+  "Use AI-assisted and agentic development tools such as Codex and Claude to move from project ideas into working applications.",
+  "Direct implementation choices, review generated code, and check whether the output matches the intended product behavior.",
+  "Test features after each phase, debug issues, and preserve working behavior when adding or changing functionality.",
+  "Refine interfaces based on user needs, readability, navigation clarity, and practical workflows.",
 ];
 
 const learningGoals = [
@@ -53,6 +54,7 @@ const learningGoals = [
   "Building more reliable backend APIs",
   "Improving database design",
   "Writing maintainable and understandable code",
+  "Using AI-assisted development tools responsibly",
   "Developing stronger testing and deployment practices",
 ];
 
@@ -71,8 +73,8 @@ export default function AboutPage() {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-foreground-muted sm:text-xl">
               Information Technology student at the Polytechnic University of
               the Philippines, building practical web, Android, desktop, and
-              console-based academic projects while preparing for internship and
-              OJT opportunities.
+              other software projects while preparing for internship and OJT
+              opportunities.
             </p>
           </div>
         </PageContainer>
@@ -87,11 +89,20 @@ export default function AboutPage() {
           />
           <div>
             <p className="text-base leading-8 text-foreground-muted sm:text-lg">
-              I have experience working with frontend development, Android
-              applications, backend APIs, databases, and UI design. I focus on
-              making project ideas usable by planning the interface, organizing
-              the data flow, building the core behavior, and checking that each
-              phase still works as intended.
+              I am an Information Technology student and AI-assisted developer.
+              I consider myself a vibe coder, and I am transparent that my
+              projects could not have been completed in their current form
+              without AI assistance. That does not mean I only enter prompts: I
+              still participate in project planning, requirements definition, UI
+              decisions, testing, debugging, technical direction, and reviewing
+              generated implementation.
+            </p>
+            <p className="mt-5 text-base leading-8 text-foreground-muted sm:text-lg">
+              My current workflow uses tools such as Codex and Claude to help
+              turn ideas into working applications, while I keep responsibility
+              for deciding what the project should do, whether the generated
+              work fits the requirements, and how the user experience should be
+              refined.
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
               {overviewCards.map((card) => (
@@ -193,6 +204,30 @@ export default function AboutPage() {
               ))}
             </ul>
           </article>
+        </div>
+      </Section>
+
+      <Section className="border-t border-border bg-surface/35">
+        <SectionHeading
+          eyebrow="Certificates"
+          title="TESDA Certificates"
+          description="Public certificate names included without certificate numbers, dates, training-center details, or verification claims."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {certificates.map((certificate) => (
+            <article
+              key={certificate.name}
+              className="rounded-lg border border-border bg-background p-6"
+            >
+              <Badge variant="accent">TESDA</Badge>
+              <h3 className="mt-4 text-xl font-semibold leading-tight text-foreground">
+                {certificate.name}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-foreground-muted">
+                {certificate.issuer}
+              </p>
+            </article>
+          ))}
         </div>
       </Section>
 

@@ -4,473 +4,476 @@ export const projects: Project[] = [
   {
     slug: "transity",
     title: "Transity",
-    category: "Android Ride-Hailing Application",
+    category: "Academic Group Android Project",
     shortDescription:
-      "A role-based Android ride-hailing application for customers, drivers, and administrators.",
+      "An Android ride-hailing application with Customer, Driver, and Admin roles.",
     description:
-      "Transity is a role-based ride-hailing application designed for customers, drivers, and administrators. It supports the full ride-booking process, from selecting a destination and finding a driver to trip completion, payment handling, and administrative management.",
+      "Transity is an academic group Android ride-hailing application created for the completion of my Information Management course. It supports customer ride booking, driver applications and approvals, driver request handling, trip workflows, map and location integration, reverse-geocoded addresses, customer trip history, driver earnings and wallet handling, commission management, discounts, promotional features, admin user and driver management, and support-related administration.",
     problem:
-      "Ride-hailing systems involve multiple users, real-time booking states, location handling, payment-related rules, and administrative workflows. The project aimed to combine these processes into one structured Android application while keeping the experience understandable for customers, drivers, and administrators.",
-    role: "I worked on the application structure, Android interfaces, booking flow, driver operations, backend integration, database behavior, role-based access, Mapbox location features, and administrative functions. I also handled debugging, UI refinements, testing, and integration between the Android application and Node.js backend.",
+      "The project needed to combine ride booking, role-based accounts, location-aware trip states, driver approval, payment-related handling, and administrative workflows into one understandable Android system for a school project.",
+    roleSummary: "Project leader and technical coordinator",
+    role: "I served as the project leader, application developer, backend contributor, UI contributor, project planner, tester, and technical coordinator. I helped guide the group's planning, coordination, implementation, testing, and refinement without claiming that every part of the group project was built by me alone.",
     currentStatus:
-      "The major customer, driver, and administrator flows are implemented. The project is considered complete as a school project, with later work focused mainly on UI refinement, testing, and presentation.",
+      "Completed as an academic group project for Information Management, with the main Customer, Driver, and Admin flows implemented and refined for presentation.",
     primaryPlatform: "Android",
     technologies: [
-      "Kotlin",
       "Java",
-      "Android",
-      "XML Layouts",
+      "Kotlin",
+      "Android XML",
       "Node.js",
       "Express",
       "MySQL",
+      "Socket.IO",
       "Retrofit",
       "Mapbox",
-      "Socket.IO",
-      "MVVM",
+      "Git",
+      "GitHub",
     ],
-    status: "Completed School Project",
+    status: "Completed",
     href: "/projects/transity",
     featured: true,
     caseStudy: true,
+    coverImage: {
+      src: "/projects/transity/transity-cover.webp",
+      width: 720,
+      height: 1600,
+      alt: "Transity Android ride-hailing welcome screen.",
+      caption: "Transity welcome screen",
+      placeholderLabel: "Transity welcome screen",
+    },
     features: [
       {
-        title: "Customer Booking",
+        title: "Customer Ride Booking",
         description:
-          "Customers can select destinations, request rides, review booking details, track trip status, and complete payment-related steps.",
+          "Customers can plan routes, select destinations, review trip details, apply vouchers or promotions, and start ride requests.",
       },
       {
-        title: "Driver Operations",
+        title: "Driver Approval and Dispatch",
         description:
-          "Drivers can go online, review available requests, accept bookings, navigate pickup and trip stages, and complete rides.",
+          "Driver application and approval flows support controlled driver onboarding before drivers handle active ride requests.",
       },
       {
-        title: "Role-Based Accounts",
+        title: "Trip and Location Handling",
         description:
-          "Customer, Driver, and Admin accounts use different interfaces, permissions, and workflows.",
+          "Mapbox, device location, route context, reverse-geocoded addresses, and trip states support pickup and ride workflows.",
       },
       {
-        title: "Live Location and Routes",
+        title: "Earnings, Wallets, and Commissions",
         description:
-          "Mapbox is used for maps, device location, destination selection, route display, and driver or customer trip states.",
-      },
-      {
-        title: "Wallet and Commission",
-        description:
-          "Driver wallet balances, top-ups, and commission deductions are handled through backend business rules.",
+          "Driver earnings, wallet balances, and commission handling are represented in the driver and backend workflows.",
       },
       {
         title: "Discounts and Promotions",
         description:
-          "The application supports promo codes, approved student, senior, or PWD discounts, and earned vouchers.",
+          "Promotional and discount-related features support vouchers, fare adjustments, and administration.",
       },
       {
         title: "Admin Management",
         description:
-          "Administrators can manage users, driver applications, support tickets, promotions, and discount requests.",
+          "Admin tools cover users, drivers, approvals, promotions, and support or ticket-related administration.",
       },
     ],
     challenges: [
       {
-        title: "Managing Multiple Booking States",
+        title: "Coordinating Group Scope",
         problem:
-          "The customer and driver applications needed to stay consistent through searching, acceptance, pickup, trip progress, payment, cancellation, and completion.",
+          "The project covered customer, driver, and admin roles, each with separate screens and business rules.",
         solution:
-          "The booking process was divided into explicit states with dedicated interface behavior and backend status updates, reducing unclear transitions and keeping both user roles synchronized.",
+          "I helped coordinate requirements, divide work into manageable flows, and review integration points so the group could keep the system coherent.",
       },
       {
-        title: "Location and Route Consistency",
+        title: "Synchronizing Booking States",
         problem:
-          "Driver and customer locations, route drawing, route clearing, and destination updates could become inconsistent across booking stages.",
+          "Customer booking, driver request handling, trip status, wallet, and commission behavior needed to remain consistent.",
         solution:
-          "Location handling was centralized around the active booking state, with routes refreshed or cleared at the correct transitions.",
+          "The project used explicit trip states and API-driven updates so Android screens and backend records could stay aligned.",
       },
       {
-        title: "Complex Role-Based Interface",
+        title: "Location-Aware Interfaces",
         problem:
-          "Customers, drivers, and administrators required different navigation, screens, permissions, and workflows.",
+          "Route planning, address display, map context, and driver location needed to be usable without overwhelming the user.",
         solution:
-          "Authentication results and account roles were used to direct users into role-specific interfaces while sharing reusable API and data structures.",
-      },
-      {
-        title: "Dialog and Modal Stability",
-        problem:
-          "Several application dialogs previously caused layout or state-related crashes.",
-        solution:
-          "Shared dialog presentation behavior was introduced to standardize modal creation and reduce repeated unstable logic.",
-      },
-      {
-        title: "Backend and Database Integration",
-        problem:
-          "Some booking and administrative features depended on database fields and API payloads remaining synchronized.",
-        solution:
-          "API routes, SQL behavior, Retrofit models, and Android state handling were reviewed together so mismatches could be corrected without changing unrelated flows.",
+          "Map and trip information were presented through focused role-specific interfaces for customer and driver flows.",
       },
     ],
     images: [
       {
-        alt: "Visual placeholder for the Transity customer booking flow.",
-        caption: "Customer booking flow",
+        src: "/projects/transity/customer-booking-flow.webp",
+        width: 720,
+        height: 1600,
+        alt: "Transity customer booking screen with destination, vehicle, estimated distance, ETA, and fare.",
+        caption: "Customer route planning and booking flow",
         placeholderLabel: "Customer booking flow",
       },
       {
-        alt: "Visual placeholder for the Transity driver trip interface.",
-        caption: "Driver trip interface",
+        src: "/projects/transity/driver-trip-interface.webp",
+        width: 720,
+        height: 1600,
+        alt: "Transity driver dashboard showing map, wallet balance, commission rate, and online dispatch state.",
+        caption: "Driver command and dispatch interface",
         placeholderLabel: "Driver trip interface",
       },
     ],
-    links: [],
+    links: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/KKFonsi/Transity",
+        type: "github",
+      },
+      {
+        label: "Download Transity",
+        href: "https://transity-download-site.netlify.app/",
+        type: "website",
+      },
+    ],
   },
   {
     slug: "kitatrack",
     title: "KitaTrack",
-    category: "Android Personal Finance Application",
+    category: "Personal Android Project",
     shortDescription:
-      "An offline-first Android personal finance tracker focused on budgeting and safe-to-spend clarity.",
+      "An offline-first Android personal finance app focused on safe-to-spend money.",
     description:
-      "KitaTrack is an offline-first personal finance tracker designed to make income, expenses, obligations, and available money easier to understand. Its main focus is giving users a clear safe-to-spend amount rather than only displaying a raw account balance.",
+      "KitaTrack is my personal offline-first Android finance application. It helps users understand their available or safe-to-spend money through income and expense tracking, reserved funds, budgets, piggy banks or savings goals, debt tracking, subscription tracking, monthly summaries, transaction history, reminders, CSV export, JSON backup and import, an Android home-screen widget, Room database storage, and MVVM-based organization.",
     problem:
-      "Traditional expense records can show transaction history without clearly explaining how much money is actually available after budgets, debts, subscriptions, savings goals, and reserved amounts are considered.",
-    role: "I worked on the application concept, Android architecture, interface design, financial rules, transaction flows, Room data storage, planning features, reports, backup and import behavior, and usability improvements.",
+      "A simple balance does not always explain how much money is safe to spend after planned budgets, debts, bills, savings goals, and reserved funds are considered.",
+    roleSummary: "Personal project owner and developer",
+    role: "KitaTrack is my personal project. I planned the finance model, directed the Android implementation, tested offline behavior, reviewed generated code, refined the interface, and corrected feature behavior as the app grew.",
     currentStatus:
-      "The main finance tracking and planning features are implemented. Development is continuing through interface refinement, widget improvements, data validation, and additional usability testing.",
+      "Completed as a personal Android project for its current public build. Further improvements may continue, but the Reports tab has been removed and is not listed as a current navigation feature.",
     primaryPlatform: "Android",
-    technologies: [
-      "Kotlin",
-      "Android",
-      "XML Layouts",
-      "Room",
-      "MVVM",
-      "Repository Pattern",
-      "LiveData",
-      "Flow",
-      "JSON",
-      "CSV",
-    ],
-    status: "In Development",
+    technologies: ["Kotlin", "Android XML", "Room", "MVVM", "Git", "GitHub"],
+    status: "Completed",
     href: "/projects/kitatrack",
     featured: true,
     caseStudy: true,
+    coverImage: {
+      src: "/projects/kitatrack/add-income.webp",
+      width: 720,
+      height: 1600,
+      alt: "KitaTrack Add Income screen with amount entry and income source choices.",
+      caption: "Add Income screen",
+      placeholderLabel: "Add Income screen",
+    },
     features: [
+      {
+        title: "Safe-to-Spend Overview",
+        description:
+          "The dashboard separates practical available money from reserved funds, obligations, and planned amounts.",
+      },
       {
         title: "Income and Expense Tracking",
         description:
-          "Users can record income and expenses using categorized transactions and review them through history and summaries.",
+          "Users can record transactions, categorize activity, and review transaction history.",
       },
       {
-        title: "Safe-to-Spend Balance",
+        title: "Budgets and Reserved Funds",
         description:
-          "The dashboard distinguishes the main balance from money reserved for budgets, debts, subscriptions, and savings.",
+          "Budgets, debt reserves, piggy banks, and savings goals help users plan where money should go.",
       },
       {
-        title: "Budget Management",
+        title: "Debts and Subscriptions",
         description:
-          "Users can create budgets, monitor spending progress, and review budget status.",
+          "Debt and subscription tracking support recurring obligations and financial planning.",
       },
       {
-        title: "Savings Goals",
+        title: "Summaries and Reminders",
         description:
-          "Piggy Bank goals support planned contributions, progress tracking, and completion handling.",
+          "Monthly summaries, reminders, and dashboard insights help users understand current financial activity.",
       },
       {
-        title: "Debt Tracking",
+        title: "Local Data and Exports",
         description:
-          "Users can record debts, payments, due information, and remaining balances.",
-      },
-      {
-        title: "Subscription Planning",
-        description:
-          "Recurring subscriptions can be organized by priority and considered during financial allocation.",
-      },
-      {
-        title: "Reports and Summaries",
-        description:
-          "The application presents transaction summaries, financial activity analysis, and charts or monthly insights.",
-      },
-      {
-        title: "Backup and Import",
-        description:
-          "Users can export and restore application data through JSON and export transaction information through CSV.",
+          "Room powers local offline storage, with CSV export plus JSON backup and import for data portability.",
       },
     ],
     challenges: [
       {
-        title: "Defining Safe-to-Spend",
+        title: "Explaining Safe-to-Spend",
         problem:
-          "A visible account balance does not necessarily represent money that is free to spend.",
+          "Users need to know what they can actually spend, not just their total recorded balance.",
         solution:
-          "The application separates available, reserved, planned, and obligated amounts so the dashboard can present a more practical safe-to-spend value.",
+          "KitaTrack separates income, expenses, planned budgets, debt reserves, subscriptions, and savings goals before presenting safe-to-spend money.",
       },
       {
-        title: "Financial Allocation Priority",
+        title: "Offline-First Data Reliability",
         problem:
-          "Multiple obligations could compete for the same available money.",
+          "The app needed to remain useful without a remote backend or account system.",
         solution:
-          "A defined priority order was established for debts, essential subscriptions, savings, and lower-priority subscriptions.",
+          "Room and MVVM-based organization keep finance data local, structured, and available offline.",
       },
       {
-        title: "Offline Data Reliability",
+        title: "Keeping Planning Screens Practical",
         problem:
-          "The application needed to remain functional without depending on a remote backend.",
+          "Budgets, savings goals, debts, and subscriptions can become too complex if every feature looks different.",
         solution:
-          "Room, repositories, and observable Android data flows were used to keep finance data locally available and consistently reflected in the interface.",
-      },
-      {
-        title: "Complex Planning Interfaces",
-        problem:
-          "Budgets, savings goals, debts, and subscriptions each required different forms, progress states, and actions.",
-        solution:
-          "Shared visual patterns and bottom-sheet-based forms were used while preserving the business rules unique to each plan type.",
-      },
-      {
-        title: "Backup Data Accuracy",
-        problem:
-          "Imported financial values and categories must match the application's expected JSON structure.",
-        solution:
-          "Backup structures and validation rules were reviewed so imported values could be mapped correctly without silently altering financial totals.",
+          "Shared interaction patterns and consistent Android XML screens keep planning actions familiar across the app.",
       },
     ],
     images: [
       {
-        alt: "Visual placeholder for the KitaTrack finance dashboard.",
-        caption: "Finance dashboard",
-        placeholderLabel: "Finance dashboard",
+        src: "/projects/kitatrack/safe-to-spend-dashboard.webp",
+        width: 720,
+        height: 1600,
+        alt: "KitaTrack dashboard showing safe-to-spend money, monthly summary, debt reserve, and piggy bank cards.",
+        caption: "Safe-to-spend dashboard with sample zeroed financial data",
+        placeholderLabel: "Safe-to-spend dashboard",
       },
       {
-        alt: "Visual placeholder for the KitaTrack budget planning screen.",
+        src: "/projects/kitatrack/budget-planning-screen.webp",
+        width: 720,
+        height: 1600,
+        alt: "KitaTrack budget planning screen with budget name, limit amount, period, category, and active setting.",
         caption: "Budget planning screen",
         placeholderLabel: "Budget planning screen",
       },
     ],
-    links: [],
+    links: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/KKFonsi/KitaTrack",
+        type: "github",
+      },
+      {
+        label: "Download KitaTrack",
+        href: "https://kitatrack-download-site.netlify.app/",
+        type: "website",
+      },
+    ],
+  },
+  {
+    slug: "campus-creatives",
+    title: "PUP: Campus Creatives",
+    category: "Academic UI/UX Project",
+    shortDescription:
+      "A UI/UX-focused showcase concept for creative work in the PUP community.",
+    description:
+      "PUP: Campus Creatives is a UI/UX-focused prototype and interface implementation for a dedicated digital showcase within the Polytechnic University of the Philippines community. It is intended to organize student and creator portfolios, artwork and project discovery, college directories, creator profiles, spotlight content, exhibitions, moderated picks, search and filtering, and public, student, and moderator interface flows in a more structured way than relying only on general social-media feeds.",
+    problem:
+      "Creative work shared only through general social-media feeds can be scattered, difficult to discover, and hard to organize by college, creator, portfolio, or exhibition context.",
+    roleSummary: "UI/UX and interface contributor",
+    role: "I contributed to the UI/UX direction, interface planning, information architecture, navigation design, responsive layout decisions, HCI and user-needs-based design choices, and implementation review for the prototype.",
+    currentStatus:
+      "Completed as an academic UI/UX project. The current deliverable is a UI/UX-focused prototype and interface implementation, not a complete production backend system.",
+    primaryPlatform: "Web UI Prototype",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "HTML",
+      "CSS",
+      "Git",
+      "GitHub",
+      "Vercel",
+      "Figma",
+    ],
+    status: "Completed UI/UX Project",
+    href: "/projects/campus-creatives",
+    featured: true,
+    caseStudy: true,
+    coverImage: {
+      src: "/projects/campus-creatives/campus-creatives-cover.webp",
+      width: 1487,
+      height: 900,
+      alt: "PUP: Campus Creatives landing page UI concept.",
+      caption: "Landing page UI concept",
+      placeholderLabel: "Campus Creatives landing page",
+    },
+    features: [
+      {
+        title: "Creative Discovery",
+        description:
+          "The interface supports artwork and project browsing through search, filters, categories, colleges, and content types.",
+      },
+      {
+        title: "Creator Profiles",
+        description:
+          "Creator profile concepts organize portfolios, recognition, submissions, events, and public profile flows.",
+      },
+      {
+        title: "Moderated Showcase",
+        description:
+          "Spotlight content, exhibitions, campus highlights, and moderated picks guide users toward approved creative work.",
+      },
+      {
+        title: "Role-Based Flows",
+        description:
+          "Public, student, and moderator interface flows were considered in the navigation and information architecture.",
+      },
+      {
+        title: "Responsive UI",
+        description:
+          "The prototype emphasizes responsive layout decisions and clearer access to creative work across viewports.",
+      },
+      {
+        title: "HCI-Based Decisions",
+        description:
+          "User needs, discoverability, and portfolio organization informed the prototype structure.",
+      },
+    ],
+    challenges: [
+      {
+        title: "Clarifying Scope",
+        problem:
+          "The concept could be mistaken for a fully deployed production platform with a complete backend.",
+        solution:
+          "The portfolio now presents it as a completed UI/UX project and prototype/interface implementation.",
+      },
+      {
+        title: "Improving Discovery",
+        problem:
+          "Social-media-style feeds do not provide enough structure for campus creative portfolios.",
+        solution:
+          "The design emphasizes directories, filters, creator profiles, spotlight areas, and organized showcase flows.",
+      },
+      {
+        title: "Balancing User Roles",
+        problem:
+          "Public visitors, students, creators, and moderators need different interface priorities.",
+        solution:
+          "The information architecture separates discovery, portfolio, submission, and moderation-related actions.",
+      },
+    ],
+    images: [
+      {
+        src: "/projects/campus-creatives/campus-discovery-concept.webp",
+        width: 1487,
+        height: 900,
+        alt: "PUP: Campus Creatives explore interface with search, filters, and creative work cards.",
+        caption: "Campus discovery interface concept",
+        placeholderLabel: "Campus discovery concept",
+      },
+      {
+        src: "/projects/campus-creatives/creator-portfolio-concept.webp",
+        width: 1487,
+        height: 900,
+        alt: "PUP: Campus Creatives creator portfolio interface concept with profile details and portfolio cards.",
+        caption: "Creator portfolio interface concept",
+        placeholderLabel: "Creator portfolio concept",
+      },
+    ],
+    links: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/KKFonsi/campus-creatives-UI",
+        type: "github",
+      },
+      {
+        label: "Open UI Demo",
+        href: "https://campus-creatives-ui-api-server.vercel.app/",
+        type: "demo",
+      },
+    ],
   },
   {
     slug: "reviewvault",
     title: "ReviewVault",
-    category: "Web-Based Reviewer and Exam Simulator",
+    category: "Academic-Support Web Project",
     shortDescription:
-      "A reviewer repository and exam simulator for organizing questions and measuring study performance.",
+      "An in-development reviewer and exam simulator for structured study practice.",
     description:
-      "ReviewVault is a browser-based reviewer repository and exam simulator that helps users organize study materials, import questions, take timed exams, review answers, and monitor performance.",
+      "ReviewVault is an in-development personal or academic-support web project for organizing reviewer content and taking structured practice exams. Its current scope includes subject management, topic management, exam management, question-bank management, easy, medium, and hard exam organization, CSV and JSON exam import, import preview and validation, automatic creation of missing subjects or topics where supported, an exam-taking interface, timer, question navigation, exam submission, scoring and results, answer review, exam history, historical result snapshots, score trends, subject, exam, and topic performance, and generated insights based on exam history.",
     problem:
-      "Study questions are often scattered across documents, spreadsheets, and separate quiz tools. ReviewVault combines question organization, exam simulation, scoring, answer review, and progress tracking in one local application.",
-    role: "I worked on the project concept, interface structure, data model, React components, local storage workflows, import behavior, exam-taking logic, scoring, result review, exam history, and score-trend planning.",
+      "Review materials and practice questions can become scattered across files, making it harder to organize topics, run exams, review answers, and understand performance over time.",
+    roleSummary: "Project planner and developer",
+    role: "I direct the project requirements, data structure, interface decisions, generated implementation review, testing, debugging, and polish as the project continues to develop.",
     currentStatus:
-      "The project includes question organization, import, exam taking, scoring, results, and answer review. Exam history and score trends are the next major areas of development.",
+      "In development. The main study, import, exam-taking, scoring, answer review, history, trend, performance, and generated insight workflows are being refined, with further development and final polish still ongoing.",
     primaryPlatform: "Web",
     technologies: [
       "React",
       "JavaScript",
+      "HTML",
       "CSS",
       "Local Storage",
-      "Session Storage",
-      "CSV",
-      "JSON",
+      "Git",
+      "GitHub",
     ],
     status: "In Development",
     href: "/projects/reviewvault",
     featured: true,
     caseStudy: true,
+    coverImage: {
+      src: "/projects/reviewvault/reviewvault-cover.webp",
+      width: 1487,
+      height: 900,
+      alt: "ReviewVault landing page for a web-based reviewer and exam simulator.",
+      caption: "ReviewVault landing page",
+      placeholderLabel: "ReviewVault landing page",
+    },
     features: [
       {
-        title: "Subject and Topic Organization",
+        title: "Study Structure",
         description:
-          "Users can create subjects and topics to organize questions and examinations.",
+          "Subjects, topics, exams, and question banks organize reviewer content into manageable areas.",
       },
       {
-        title: "Exam and Question Management",
+        title: "Difficulty Organization",
         description:
-          "Exams and questions can be created, edited, filtered, and grouped by subject, topic, and difficulty.",
+          "Questions and exams can be organized across easy, medium, and hard difficulty levels.",
       },
       {
         title: "CSV and JSON Import",
         description:
-          "Question sets can be imported with preview, duplicate handling, and automatic creation of missing related records.",
+          "Exam import includes preview, validation, and automatic creation of missing subjects or topics where supported.",
       },
       {
-        title: "Timed Exam Simulation",
+        title: "Exam-Taking Interface",
         description:
-          "Users can take timed exams, navigate between questions, and confirm submission.",
-      },
-      {
-        title: "Automatic Scoring",
-        description:
-          "Submitted attempts are scored using stored question data and summarized through correct, incorrect, skipped, and time statistics.",
+          "Practice exams include timers, question navigation, submission, scoring, and result summaries.",
       },
       {
         title: "Answer Review",
         description:
-          "Users can inspect each response, compare it with the correct answer, and read explanations.",
+          "Users can review submitted answers, compare against correct answers, and inspect explanations.",
       },
       {
-        title: "Exam History and Trends",
+        title: "History and Insights",
         description:
-          "The project is designed to preserve past attempts and present performance over time.",
+          "Exam history, historical snapshots, score trends, performance breakdowns, and generated insights support ongoing study review.",
       },
     ],
     challenges: [
       {
-        title: "Keeping Data Consistent Without a Backend",
+        title: "Keeping Local Data Coherent",
         problem:
-          "Subjects, topics, exams, questions, and attempts needed to remain connected while using browser storage.",
+          "Subjects, topics, exams, questions, attempts, and historical results must stay connected without a server-backed database.",
         solution:
-          "A centralized data context and structured local storage helpers were used to manage relationships and cascading changes.",
+          "Structured browser storage and clear data relationships keep the local study system usable while development continues.",
       },
       {
-        title: "Importing Flexible Question Sets",
+        title: "Validating Imported Exams",
         problem:
-          "Imported CSV and JSON files could contain missing subjects, topics, exams, or duplicate questions.",
+          "CSV and JSON files can contain missing subjects, missing topics, inconsistent difficulty values, or invalid question data.",
         solution:
-          "The import process validates and previews incoming rows, creates missing related records, and skips duplicates when appropriate.",
+          "Import preview and validation help catch issues before exam data is added to the active question bank.",
       },
       {
-        title: "Preserving Exam Attempts",
+        title: "Presenting Performance Clearly",
         problem:
-          "An exam attempt must survive route changes between the exam page, results page, and answer review page.",
+          "Exam results need to show more than a final score if users are trying to improve.",
         solution:
-          "Pending attempt and current result data are stored temporarily in session storage and rebuilt from the current question bank when needed.",
-      },
-      {
-        title: "Scoring and Topic Performance",
-        problem:
-          "The application needed to calculate overall results while also showing performance by topic.",
-        solution:
-          "Pure scoring utilities calculate answer status, totals, percentages, and topic-level performance separately from interface components.",
+          "The project adds answer review, topic performance, history snapshots, score trends, and generated insights based on exam history.",
       },
     ],
     images: [
       {
-        alt: "Visual placeholder for the ReviewVault exam results screen.",
-        caption: "Exam results screen",
+        src: "/projects/reviewvault/exam-results-screen.webp",
+        width: 1487,
+        height: 900,
+        alt: "ReviewVault exam results screen with score summary and performance by topic.",
+        caption: "Exam results and topic performance",
         placeholderLabel: "Exam results screen",
       },
       {
-        alt: "Visual placeholder for the ReviewVault question review interface.",
+        src: "/projects/reviewvault/question-review-interface.webp",
+        width: 1487,
+        height: 900,
+        alt: "ReviewVault answer review interface showing question status, answer choices, and explanation.",
         caption: "Question review interface",
         placeholderLabel: "Question review interface",
       },
     ],
-    links: [],
-  },
-  {
-    slug: "campus-creatives",
-    title: "Campus Creatives",
-    category: "Community Art and Talent Showcase System",
-    shortDescription:
-      "A community platform designed to showcase student creators and campus talent.",
-    description:
-      "Campus Creatives is a proposed community platform for student creators to publish portfolio work, gain recognition, participate in campus activities, and connect with colleges, organizations, and audiences.",
-    problem:
-      "Creative work shared through general social media can quickly become buried, making it difficult for student creators to build a visible portfolio or receive sustained recognition from their campus community.",
-    role: "I contributed to the project concept, user research, feature planning, survey analysis, information architecture, navigation flow, interface requirements, meeting documentation, and UI sketch preparation.",
-    currentStatus:
-      "The concept, target users, major features, research findings, information architecture, and UI sketch requirements have been defined. The project is currently in the interface sketch and design stage.",
-    primaryPlatform: "Design Concept",
-    technologies: [
-      "Figma",
-      "UI/UX Design",
-      "Human-Computer Interaction",
-      "Information Architecture",
-      "Responsive Web Design",
-      "User Research",
-      "Survey Analysis",
-    ],
-    status: "Design and Planning Phase",
-    href: "/projects/campus-creatives",
-    featured: true,
-    caseStudy: true,
-    features: [
-      {
-        title: "Creator Portfolios",
-        description:
-          "Student creators can organize and present creative projects through dedicated portfolio pages.",
-      },
-      {
-        title: "College and Organization Pages",
-        description:
-          "Colleges and organizations can highlight members, events, and creative activities.",
-      },
-      {
-        title: "Submission and Curation",
-        description:
-          "Creative works can pass through a submission and review process before being featured.",
-      },
-      {
-        title: "Campus Highlights",
-        description:
-          "Selected projects and creators can receive broader campus visibility.",
-      },
-      {
-        title: "Events and Contests",
-        description:
-          "The platform can support creative events, contests, and participation opportunities.",
-      },
-      {
-        title: "Search and Filters",
-        description:
-          "Visitors can discover creators and projects by category, organization, college, or creative field.",
-      },
-      {
-        title: "Recognition and Portfolio Links",
-        description:
-          "Creators can earn recognition badges and share portfolio links in resumes or applications.",
-      },
-    ],
-    challenges: [
-      {
-        title: "Avoiding Social Media Duplication",
-        problem:
-          "The platform should not simply recreate a general-purpose social network.",
-        solution:
-          "The concept focuses on structured portfolios, campus discovery, recognition, submissions, and creative events rather than general social posting.",
-      },
-      {
-        title: "Defining Different User Needs",
-        problem:
-          "Individual creators, colleges, organizations, viewers, and curators need different features.",
-        solution:
-          "User needs were grouped into clear roles and mapped into separate content areas and navigation flows.",
-      },
-      {
-        title: "Turning Survey Findings Into Interface Priorities",
-        problem:
-          "Survey results needed to influence the interface without overgeneralizing from a small sample.",
-        solution:
-          "The survey was used as supporting evidence while broader HCI principles and project requirements guided the final interface priorities.",
-      },
-      {
-        title: "Keeping the Information Architecture Understandable",
-        problem:
-          "Portfolios, highlights, events, submissions, organizations, and search could create a complicated navigation structure.",
-        solution:
-          "The content was grouped into a limited number of primary destinations and documented in a concise UI sketch reference.",
-      },
-    ],
-    images: [
-      {
-        alt: "Visual placeholder for the Campus Creatives creator portfolio concept.",
-        caption: "Creator portfolio concept",
-        placeholderLabel: "Creator portfolio concept",
-      },
-      {
-        alt: "Visual placeholder for the Campus Creatives campus discovery concept.",
-        caption: "Campus discovery concept",
-        placeholderLabel: "Campus discovery concept",
-      },
-    ],
-    links: [],
-  },
-  {
-    slug: "anivault",
-    title: "AniVault",
-    category: "Web Application",
-    shortDescription:
-      "A PHP-based anime discovery, review, and personal-list application.",
-    description:
-      "AniVault allows users to browse anime, filter by genre, read reviews, manage a personal list, add ratings and notes, and interact with a database-driven recommendation chatbot.",
-    technologies: ["PHP", "MySQL", "Bootstrap", "JavaScript", "HTML", "CSS"],
-    status: "Completed Academic Project",
-    featured: false,
-    caseStudy: false,
     links: [],
   },
 ];

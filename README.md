@@ -1,6 +1,6 @@
 # Kevin Kyle S. Alfon Portfolio
 
-Personal portfolio website for Kevin Kyle S. Alfon, an Information Technology student building web, Android, desktop, and academic software projects.
+Personal portfolio website for Kevin Kyle S. Alfon, an Information Technology student and AI-assisted developer building web, Android, desktop, and academic software projects.
 
 ## Stack
 
@@ -32,20 +32,21 @@ npm run build
 - `/projects`
 - `/projects/transity`
 - `/projects/kitatrack`
-- `/projects/reviewvault`
 - `/projects/campus-creatives`
+- `/projects/reviewvault`
 
 ## Configuration
 
 The verified production URL is `https://alfon-portfolio.vercel.app`. Set `NEXT_PUBLIC_SITE_URL` only when overriding that URL, such as after connecting a custom domain. The site URL is used for metadata, canonical URLs, `robots.txt`, and `sitemap.xml`.
 
-Email and resume actions are centralized in `src/data/site.ts`. The resume PDF path is configured, but the public PDF should only be added after confirming it is safe for public distribution.
+Email, LinkedIn, GitHub, and resume actions are centralized in `src/data/site.ts`. The public resume file is the supplied original document stored at `public/resume/RESUME.docx`.
 
 ## Content Updates
 
 - Site identity and public contact configuration: `src/data/site.ts`
 - Navigation items: `src/data/navigation.ts`
 - Skills: `src/data/skills.ts`
+- Certificates: `src/data/certificates.ts`
 - Project summaries and case-study data: `src/data/projects.ts`
 
 ## Deployment Notes

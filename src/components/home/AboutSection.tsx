@@ -4,19 +4,19 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const focusCards = [
   {
-    title: "Mobile Development",
+    title: "Software Range",
     description:
-      "Building native Android applications with Kotlin, Java, XML, Retrofit, Room, and Mapbox.",
+      "Building web, Android, desktop, and other software projects for academic and personal use cases.",
   },
   {
-    title: "Web Development",
+    title: "Agentic Workflow",
     description:
-      "Creating responsive web applications using React, Next.js, TypeScript, PHP, and modern CSS.",
+      "Using Codex, Claude, and similar tools as part of an honest AI-assisted development process.",
   },
   {
-    title: "UI and System Design",
+    title: "Technical Direction",
     description:
-      "Designing clear interfaces, user flows, reusable components, and practical application structures.",
+      "Defining requirements, reviewing generated code, testing behavior, debugging issues, and refining interfaces.",
   },
 ];
 
@@ -27,15 +27,16 @@ export function AboutSection() {
         <SectionHeading
           eyebrow="About"
           title="About Me"
-          description="I am an IT student and aspiring software developer with experience building web and mobile applications for academic and personal projects."
+          description="I am an Information Technology student and AI-assisted developer building practical software projects with a transparent vibe-coding workflow."
         />
         <div>
           <p className="text-base leading-8 text-foreground-muted sm:text-lg">
-            I enjoy turning project ideas into functional systems, from
-            interface planning and application logic to testing and deployment. I
-            am particularly interested in Android development, frontend
-            development, UI/UX, and software that solves practical everyday
-            problems.
+            I consider myself a vibe coder, and I am transparent that my
+            projects could not have reached their current scope without AI
+            assistance. My contribution is not just entering prompts: I help
+            define the requirements, plan the features, make UI decisions,
+            direct implementation, test behavior, resolve issues, and review the
+            generated work until the project feels usable.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
             {focusCards.map((card) => (

@@ -18,6 +18,9 @@ export interface ProjectImage {
   alt: string;
   caption?: string;
   placeholderLabel: string;
+  src?: string;
+  width?: number;
+  height?: number;
 }
 
 export interface ProjectLink {
@@ -34,6 +37,7 @@ export interface Project {
   description: string;
   problem?: string;
   role?: string;
+  roleSummary?: string;
   currentStatus?: string;
   primaryPlatform?: string;
   technologies: string[];
@@ -44,10 +48,16 @@ export interface Project {
   features?: ProjectFeature[];
   challenges?: ProjectChallenge[];
   images?: ProjectImage[];
+  coverImage?: ProjectImage;
   links?: ProjectLink[];
 }
 
 export interface SkillGroup {
   title: string;
   skills: string[];
+}
+
+export interface Certificate {
+  name: string;
+  issuer: string;
 }

@@ -34,9 +34,28 @@ export async function generateMetadata({
     };
   }
 
+  const coverImage = project.coverImage;
+  const openGraphImages =
+    coverImage?.src && coverImage.width && coverImage.height
+      ? [
+          {
+            url: coverImage.src,
+            width: coverImage.width,
+            height: coverImage.height,
+            alt: coverImage.alt,
+          },
+        ]
+      : undefined;
+
   return {
     title: project.title,
     description: project.shortDescription,
+    openGraph: {
+      title: project.title,
+      description: project.shortDescription,
+      type: "article",
+      images: openGraphImages,
+    },
     ...(getCanonicalUrl(`/projects/${project.slug}`)
       ? {
           alternates: {

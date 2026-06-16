@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
+import { getAbsoluteUrl } from "@/lib/site-url";
 import { cn } from "@/lib/utils";
 
 type ContactActionsProps = {
@@ -13,6 +14,11 @@ export function ContactActions({ className }: ContactActionsProps) {
   const { contact } = siteConfig;
   const mailHref = contact.email ? `mailto:${contact.email}` : null;
   const resumeHref = contact.resumeAvailable ? contact.resumePath : null;
+  const resumePreviewHref = resumeHref
+    ? `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
+        getAbsoluteUrl(resumeHref),
+      )}`
+    : null;
 
   return (
     <div className={cn("flex flex-col gap-3 sm:flex-row lg:flex-col", className)}>
@@ -41,14 +47,24 @@ export function ContactActions({ className }: ContactActionsProps) {
         GitHub Profile (External)
       </Button>
 
+      <Button
+        href={contact.linkedInUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="secondary"
+        aria-label="Open Kevin Kyle S. Alfon's LinkedIn profile in a new tab"
+      >
+        LinkedIn Profile (External)
+      </Button>
+
       {resumeHref ? (
         <>
           <Button
-            href={resumeHref}
+            href={resumePreviewHref ?? resumeHref}
             target="_blank"
             rel="noopener noreferrer"
             variant="secondary"
-            aria-label="Open Kevin Kyle S. Alfon's resume PDF in a new tab"
+            aria-label="Preview Kevin Kyle S. Alfon's resume in a new tab"
           >
             View Resume
           </Button>
@@ -56,7 +72,7 @@ export function ContactActions({ className }: ContactActionsProps) {
             href={resumeHref}
             download
             variant="secondary"
-            aria-label="Download Kevin Kyle S. Alfon's resume PDF"
+            aria-label="Download Kevin Kyle S. Alfon's resume"
           >
             Download Resume
           </Button>
@@ -66,7 +82,7 @@ export function ContactActions({ className }: ContactActionsProps) {
           type="button"
           disabled
           className={disabledButtonClasses}
-          aria-label="Resume PDF not yet available"
+          aria-label="Resume not yet available"
         >
           Resume Coming Soon
         </button>

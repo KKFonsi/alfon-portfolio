@@ -30,15 +30,14 @@ function getProjectSummary() {
     project.category.includes("Web"),
   ).length;
   const conceptCount = projects.filter((project) =>
-    project.category.includes("Concept") ||
-    project.category.includes("Community"),
+    project.category.includes("UI/UX"),
   ).length;
 
   return [
     `${projects.length} projects`,
     `${mobileCount} mobile applications`,
     `${webCount} web applications`,
-    `${conceptCount} design concept`,
+    `${conceptCount} UI/UX project`,
   ];
 }
 
@@ -57,9 +56,9 @@ export default function ProjectsPage() {
               Projects
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-foreground-muted sm:text-xl">
-              A collection of web, mobile, and system-design projects that
-              demonstrate my development process, technical skills, and approach
-              to solving practical problems.
+              A collection of web, Android, and UI/UX projects that demonstrate
+              my AI-assisted development process, technical direction, testing,
+              and approach to solving practical problems.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {summary.map((item) => (

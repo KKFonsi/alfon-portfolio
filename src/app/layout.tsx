@@ -57,7 +57,7 @@ function StructuredData() {
     "@type": "Person",
     name: siteConfig.name,
     url: configuredSiteUrl,
-    sameAs: [siteConfig.contact.githubUrl],
+    sameAs: [siteConfig.contact.githubUrl, siteConfig.contact.linkedInUrl],
     description: siteConfig.description,
   };
 

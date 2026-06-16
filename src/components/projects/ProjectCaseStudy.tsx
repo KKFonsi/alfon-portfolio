@@ -89,7 +89,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           {[
             ["Project Type", project.category],
             ["Status", project.status],
-            ["My Role", "Design and development contribution"],
+            ["My Role", project.roleSummary ?? "Design and development contribution"],
             ["Primary Platform", project.primaryPlatform ?? "Software"],
           ].map(([label, value]) => (
             <div key={label} className="rounded-lg border border-border bg-surface p-5">
