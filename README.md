@@ -39,7 +39,7 @@ npm run build
 
 The verified production URL is `https://alfon-portfolio.vercel.app`. Set `NEXT_PUBLIC_SITE_URL` only when overriding that URL, such as after connecting a custom domain. The site URL is used for metadata, canonical URLs, `robots.txt`, and `sitemap.xml`.
 
-Email, LinkedIn, GitHub, and resume actions are centralized in `src/data/site.ts`. The public resume file is the supplied original document stored at `public/resume/RESUME.docx`.
+Email, LinkedIn, GitHub, and resume actions are centralized in `src/data/site.ts`. The public resume file is the supplied PDF stored at `public/resume/RESUME.pdf`.
 
 ## Content Updates
 

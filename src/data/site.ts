@@ -40,7 +40,7 @@ export const siteConfig: SiteConfig = {
     email: "alfonkevinkylesoriano@gmail.com",
     githubUrl: "https://github.com/KKFonsi",
     linkedInUrl: "https://www.linkedin.com/in/alfon-kevin-kyle-794634411/",
-    resumePath: "/resume/RESUME.docx",
+    resumePath: "/resume/RESUME.pdf",
     resumeAvailable: true,
   },
 };
